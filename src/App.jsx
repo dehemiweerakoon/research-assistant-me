@@ -5,8 +5,11 @@ import Header from './components/Header';
 import RightPanel from './components/RightPanel';
 import AuthPage from './pages/AuthPage';
 import PapersPage from './pages/PapersPage';
+import SemanticSearchPage from './pages/SemanticSearchPage';
 import IngestPage from './pages/IngestPage';
 import UsersPage from './pages/UsersPage';
+import AskPage from './pages/AskPage';
+import ResearchAssistantPage from './pages/ResearchAssistantPage';
 import { Loader2 } from 'lucide-react';
 
 export default function App() {
@@ -65,11 +68,20 @@ export default function App() {
                   externalQuery={searchQuery}
                 />
               )}
+              {activeTab === 'semantic-search' && (
+                <SemanticSearchPage />
+              )}
               {activeTab === 'ingest' && (
                 <IngestPage onNavigateToPapers={() => setActiveTab('papers')} />
               )}
               {activeTab === 'users' && (
                 <UsersPage />
+              )}
+              {activeTab === 'ask' && (
+                <AskPage />
+              )}
+              {activeTab === 'research-assistant' && (
+                <ResearchAssistantPage />
               )}
             </main>
 

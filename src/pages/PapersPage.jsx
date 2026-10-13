@@ -10,7 +10,7 @@ import {
   Filter,
   Database,
   AlertCircle,
-  Sparkles,
+  Brain,
   Minus,
   Plus,
   CheckCircle,
@@ -133,7 +133,7 @@ export default function PapersPage({ onNavigateToIngest, externalQuery }) {
           display: 'flex', alignItems: 'center', justifyContent: 'center',
           color: '#fff', boxShadow: '0 10px 25px rgba(168, 85, 247, 0.3)', flexShrink: 0
         }}>
-          <Sparkles size={46} />
+          <Brain size={46} />
         </div>
       </div>
 

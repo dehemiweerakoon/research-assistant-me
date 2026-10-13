@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth } from '../context/AuthContext';
-import { BookOpen, Search, Database, Users, LogOut, User, Sparkles } from 'lucide-react';
+import { BookOpen, Search, Database, Users, LogOut, User, Brain } from 'lucide-react';
 
 export default function Navbar({ activeTab, setActiveTab }) {
   const { user, isAdmin, logout } = useAuth();
@@ -25,7 +25,7 @@ export default function Navbar({ activeTab, setActiveTab }) {
             color: 'white',
             boxShadow: '0 4px 14px var(--accent-glow)'
           }}>
-            <Sparkles size={20} />
+            <Brain size={20} />
           </div>
           <div>
             <div style={{ fontWeight: 800, fontSize: '17px', letterSpacing: '-0.02em', background: 'var(--accent-gradient)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>

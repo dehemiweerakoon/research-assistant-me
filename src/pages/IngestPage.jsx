@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { paperService } from '../services/api';
-import { Database, Sparkles, CheckCircle2, AlertCircle, Loader2, ArrowRight, BookOpen, Layers } from 'lucide-react';
+import { Database, Brain, CheckCircle2, AlertCircle, Loader2, ArrowRight, BookOpen, Layers } from 'lucide-react';
 
 export default function IngestPage({ onNavigateToPapers }) {
   const [topic, setTopic] = useState('');
@@ -68,7 +68,7 @@ export default function IngestPage({ onNavigateToPapers }) {
             <button type="submit" className="btn btn-primary btn-pill" style={{ height: '46px', padding: '0 24px', fontSize: '13px' }}
               disabled={loading || !topic.trim()}>
               {loading ? (<><Loader2 size={16} className="animate-spin" /><span>Ingesting...</span></>) :
-                (<><Sparkles size={16} /><span>Fetch & Index</span></>)}
+                (<><Brain size={16} /><span>Fetch & Index</span></>)}
             </button>
           </div>
         </form>

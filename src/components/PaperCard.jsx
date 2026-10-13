@@ -49,7 +49,7 @@ export default function PaperCard({ paper, onOpenModal }) {
       : null;
 
   return (
-    <div className="glass-panel glass-panel-hover animate-fade-in" style={{ padding: '22px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
+    <div className="glass-panel glass-panel-hover animate-fade-in" style={{ height: '100%', padding: '22px', display: 'flex', flexDirection: 'column', gap: '14px' }}>
       
       {/* Top Meta Badges */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
@@ -83,7 +83,7 @@ export default function PaperCard({ paper, onOpenModal }) {
       </div>
 
       {/* Paper Title */}
-      <h3 style={{ fontSize: '16px', fontWeight: 700, color: 'var(--text-main)', lineHeight: 1.4, cursor: 'pointer' }} onClick={() => onOpenModal(paper)}>
+      <h3 style={{ minHeight: '45px', fontSize: '16px', fontWeight: 700, color: 'var(--text-main)', lineHeight: 1.4, cursor: 'pointer' }} onClick={() => onOpenModal(paper)}>
         {paper.title || 'Untitled Research Paper'}
       </h3>
 
@@ -126,9 +126,10 @@ export default function PaperCard({ paper, onOpenModal }) {
 
       {/* View full details button */}
       <button
+        type="button"
         onClick={() => onOpenModal(paper)}
         className="btn btn-secondary"
-        style={{ width: '100%', fontSize: '13px', marginTop: '4px' }}
+        style={{ width: '100%', fontSize: '13px', marginTop: 'auto' }}
       >
         <FileText size={14} />
         View Full Details

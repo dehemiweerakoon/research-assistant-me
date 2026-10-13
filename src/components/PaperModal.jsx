@@ -70,9 +70,12 @@ export default function PaperModal({ paper, onClose }) {
       ? Number(paper.citation_count)
       : null;
 
-  const rawId = paper.paper_id || paper.id || '';
+  const rawIdValue = paper.paper_id || paper.id || '';
+  const rawId = typeof rawIdValue === 'string' ? rawIdValue : String(rawIdValue);
+  const doiValue = paper.doi || '';
+  const doi = typeof doiValue === 'string' ? doiValue : String(doiValue);
   const openAlexUrl = rawId.startsWith('http') ? rawId : rawId ? `https://openalex.org/${rawId}` : null;
-  const doiUrl = paper.doi ? (paper.doi.startsWith('http') ? paper.doi : `https://doi.org/${paper.doi}`) : null;
+  const doiUrl = doi ? (doi.startsWith('http') ? doi : `https://doi.org/${doi}`) : null;
 
   return (
     <div
@@ -307,4 +310,3 @@ export default function PaperModal({ paper, onClose }) {
     </div>
   );
 }
-

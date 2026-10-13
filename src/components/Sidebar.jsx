@@ -6,7 +6,9 @@ import {
   Database, 
   Users, 
   BarChart3, 
-  Sparkles, 
+  Brain,
+  MessageCircle,
+  FileSearch,
   LogOut 
 } from 'lucide-react';
 
@@ -14,7 +16,10 @@ export default function Sidebar({ activeTab, setActiveTab }) {
   const { user, isAdmin, logout } = useAuth();
 
   const navItems = [
+    { id: 'ask', label: 'ASK', icon: MessageCircle },
+    { id: 'research-assistant', label: 'RESEARCH', icon: FileSearch },
     { id: 'papers', label: 'EXPLORE', icon: Search },
+    { id: 'semantic-search', label: 'SEMANTIC', icon: Brain },
     { id: 'ingest', label: 'INGEST', icon: Database },
     ...(isAdmin ? [{ id: 'users', label: 'MEMBERS', icon: Users }] : []),
   ];
@@ -44,7 +49,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
         marginBottom: '24px',
         boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
       }}>
-        <Sparkles size={22} />
+        <Brain  size={22} />
       </div>
 
       {/* Nav items list */}

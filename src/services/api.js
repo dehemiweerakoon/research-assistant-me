@@ -45,7 +45,20 @@ export const authService = {
 // Papers endpoints
 export const paperService = {
   searchPapers: (query) => api.get(`/papers?q=${encodeURIComponent(query)}`),
+  semanticSearch: (query) => api.get('/papers/semanticSearch', { params: { q: query } }),
   collectPapers: (query) => api.post('/papers', { query }),
+};
+
+// Research assistant endpoints
+export const suggestionService = {
+  uploadResearch: (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    return api.post('/suggestions/upload', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    });
+  },
+  queryResearch: (question) => api.post('/suggestions/query', { question }),
 };
 
 // User admin endpoints
@@ -56,4 +69,3 @@ export const userService = {
 };
 
 export default api;
-
